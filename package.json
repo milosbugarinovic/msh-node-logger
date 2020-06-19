@@ -1,0 +1,135 @@
+{
+  "author": "Milos Bugarinovic <milos.bugarinovic@gmail.com>",
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "internet-available": "1.0.0",
+    "is-reachable": "4.0.0",
+    "winston": "3.2.1",
+    "winston-elasticsearch": "0.9.0",
+    "winston-logstash-ts": "0.2.3",
+    "winston-slack-webhook-transport": "1.2.4",
+    "winston-transport-sentry-node": "0.4.0"
+  },
+  "description": "",
+  "devDependencies": {
+    "@commitlint/cli": "8.3.5",
+    "@commitlint/config-conventional": "8.3.4",
+    "@types/lodash.camelcase": "4.3.6",
+    "@types/jest": "26.0.0",
+    "@types/node": "14.0.13",
+    "@types/rollup-plugin-json": "3.0.2",
+    "colors": "1.4.0",
+    "commitizen": "4.1.2",
+    "coveralls": "3.1.0",
+    "cross-env": "7.0.2",
+    "cz-conventional-changelog": "3.2.0",
+    "husky": "4.2.5",
+    "jest": "26.0.1",
+    "jest-config": "26.0.1",
+    "lint-staged": "10.2.11",
+    "lodash.camelcase": "4.3.0",
+    "prettier": "2.0.5",
+    "prompt": "1.0.0",
+    "replace-in-file": "6.1.0",
+    "rimraf": "3.0.2",
+    "rollup": "2.17.1",
+    "rollup-plugin-commonjs": "10.1.0",
+    "rollup-plugin-json": "4.0.0",
+    "rollup-plugin-node-resolve": "5.2.0",
+    "rollup-plugin-sourcemaps": "0.6.2",
+    "rollup-plugin-typescript2": "0.27.1",
+    "semantic-release": "17.0.8",
+    "shelljs": "0.8.4",
+    "travis-deploy-once": "5.0.11",
+    "ts-jest": "26.1.0",
+    "ts-node": "8.10.2",
+    "tslint": "6.1.2",
+    "tslint-config-prettier": "1.18.0",
+    "tslint-config-standard": "9.0.0",
+    "typedoc": "0.17.7",
+    "typescript": "3.9.5"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "src/*.{js,ts}"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/",
+      "/.idea/",
+      "/dist/",
+      "/tools/",
+      "/docs/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 95,
+        "lines": 95,
+        "statements": 95
+      }
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "testEnvironment": "node",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    }
+  },
+  "keywords": [],
+  "license": "MIT",
+  "lint-staged": {
+    "{src,test}/**/*.ts": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "main": "dist/msh-node-logger.umd.js",
+  "module": "dist/msh-node-logger.es5.js",
+  "name": "msh-node-logger",
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:milosbugarinovic/msh-node-logger.git"
+  },
+  "scripts": {
+    "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src",
+    "commit": "git-cz",
+    "deploy-docs": "ts-node tools/gh-pages-publish",
+    "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "prebuild": "rimraf dist",
+    "precommit": "lint-staged",
+    "report-coverage": "cat ./coverage/lcov.info | coveralls",
+    "semantic-release": "semantic-release",
+    "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
+    "start": "rollup -c rollup.config.ts -w",
+    "test": "jest --coverage",
+    "test:prod": "npm run lint && npm run test -- --no-cache",
+    "test:watch": "jest --coverage --watch",
+    "travis-deploy-once": "travis-deploy-once"
+  },
+  "typings": "dist/types/msh-node-logger.d.ts",
+  "version": "0.0.1"
+}
