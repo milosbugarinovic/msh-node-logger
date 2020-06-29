@@ -13,7 +13,7 @@
   "dependencies": {
     "internet-available": "1.0.0",
     "is-reachable": "4.0.0",
-    "winston": "3.2.1",
+    "winston": "3.3.3",
     "winston-elasticsearch": "0.9.0",
     "winston-logstash-ts": "0.2.3",
     "winston-slack-webhook-transport": "1.2.4",
@@ -21,11 +21,11 @@
   },
   "description": "",
   "devDependencies": {
-    "@commitlint/cli": "8.3.5",
-    "@commitlint/config-conventional": "8.3.4",
+    "@commitlint/cli": "9.0.1",
+    "@commitlint/config-conventional": "9.0.1",
+    "@types/jest": "26.0.3",
     "@types/lodash.camelcase": "4.3.6",
-    "@types/jest": "26.0.0",
-    "@types/node": "14.0.13",
+    "@types/node": "14.0.14",
     "@types/rollup-plugin-json": "3.0.2",
     "colors": "1.4.0",
     "commitizen": "4.1.2",
@@ -33,29 +33,29 @@
     "cross-env": "7.0.2",
     "cz-conventional-changelog": "3.2.0",
     "husky": "4.2.5",
-    "jest": "26.0.1",
-    "jest-config": "26.0.1",
+    "jest": "26.1.0",
+    "jest-config": "26.1.0",
     "lint-staged": "10.2.11",
     "lodash.camelcase": "4.3.0",
     "prettier": "2.0.5",
     "prompt": "1.0.0",
     "replace-in-file": "6.1.0",
     "rimraf": "3.0.2",
-    "rollup": "2.17.1",
+    "rollup": "2.18.1",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-json": "4.0.0",
     "rollup-plugin-node-resolve": "5.2.0",
     "rollup-plugin-sourcemaps": "0.6.2",
     "rollup-plugin-typescript2": "0.27.1",
-    "semantic-release": "17.0.8",
+    "semantic-release": "17.1.1",
     "shelljs": "0.8.4",
     "travis-deploy-once": "5.0.11",
-    "ts-jest": "26.1.0",
+    "ts-jest": "26.1.1",
     "ts-node": "8.10.2",
     "tslint": "6.1.2",
     "tslint-config-prettier": "1.18.0",
     "tslint-config-standard": "9.0.0",
-    "typedoc": "0.17.7",
+    "typedoc": "0.17.8",
     "typescript": "3.9.5"
   },
   "engines": {
@@ -64,6 +64,11 @@
   "files": [
     "dist"
   ],
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E  HUSKY_GIT_PARAMS"
+    }
+  },
   "jest": {
     "collectCoverageFrom": [
       "src/*.{js,ts}"
@@ -131,5 +136,5 @@
     "travis-deploy-once": "travis-deploy-once"
   },
   "typings": "dist/types/msh-node-logger.d.ts",
-  "version": "0.0.1"
+  "version": "0.0.0"
 }
