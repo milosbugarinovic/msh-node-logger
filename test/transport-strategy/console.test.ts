@@ -1,5 +1,5 @@
-import { Console } from '../../src/transport-strategy/console'
 import { transports } from 'winston'
+import { Console } from '../../src/transport-strategy/console'
 jest.mock('winston')
 
 describe('Console', () => {

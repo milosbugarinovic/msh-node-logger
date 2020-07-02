@@ -1,7 +1,7 @@
-import { TransportStrategy } from './index'
 import { SlackHookOptions } from 'winston-slack-webhook-transport'
-import * as Transport from 'winston-transport'
 import WinstonSlackHook from 'winston-slack-webhook-transport'
+import * as Transport from 'winston-transport'
+import { TransportStrategy } from './index'
 
 export class SlackHook implements TransportStrategy {
   private readonly __slackHookOptions: SlackHookOptions

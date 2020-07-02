@@ -112,8 +112,14 @@
   "module": "dist/msh-node-logger.es5.js",
   "name": "msh-node-logger",
   "prettier": {
+    "bracketSpacing": true,
+    "printWidth": 130,
     "semi": false,
-    "singleQuote": true
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "useTabs": false,
+    "arrowParens": "avoid"
   },
   "repository": {
     "type": "git",

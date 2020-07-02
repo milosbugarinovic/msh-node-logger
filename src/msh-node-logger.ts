@@ -1,7 +1,7 @@
-import { TransportStrategy } from './transport-strategy/'
+import * as Transport from 'winston-transport'
 import { RecoveryStrategy } from './recovery-strategy'
 import { NoRecovery } from './recovery-strategy/no-recovery'
-import * as Transport from 'winston-transport'
+import { TransportStrategy } from './transport-strategy/'
 
 export default class MshNodeLogger {
   private __transportStrategy: TransportStrategy

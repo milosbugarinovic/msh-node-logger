@@ -1,7 +1,7 @@
-import { TransportStrategy } from './index'
-import { ConsoleTransportOptions } from 'winston/lib/winston/transports'
 import { transports } from 'winston'
 import * as Transport from 'winston-transport'
+import { ConsoleTransportOptions } from 'winston/lib/winston/transports'
+import { TransportStrategy } from './index'
 
 export class Console implements TransportStrategy {
   private readonly __consoleOptions: ConsoleTransportOptions

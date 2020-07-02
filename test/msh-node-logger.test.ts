@@ -1,7 +1,7 @@
 import MshNodeLogger from '../src/msh-node-logger'
+import { InternetAvailable } from '../src/recovery-strategy/internet-available'
 import { TransportStrategy } from '../src/transport-strategy/'
 import { Console } from '../src/transport-strategy/console'
-import { InternetAvailable } from '../src/recovery-strategy/internet-available'
 
 describe('MshNodeLogger', () => {
   it('MshNodeLogger is instantiable', () => {

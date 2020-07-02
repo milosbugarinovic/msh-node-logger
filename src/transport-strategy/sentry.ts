@@ -1,8 +1,8 @@
+import os from 'os'
+import * as Transport from 'winston-transport'
 import WinstonSentry from 'winston-transport-sentry-node'
 import { SentryTransportOptions } from 'winston-transport-sentry-node/dist/transport'
 import { TransportStrategy } from './index'
-import * as Transport from 'winston-transport'
-import os from 'os'
 
 export type WinstonSentryDefaultMetaType = {
   environment?: string

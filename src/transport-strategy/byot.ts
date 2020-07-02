@@ -1,5 +1,5 @@
-import { TransportStrategy } from './index'
 import * as Transport from 'winston-transport'
+import { TransportStrategy } from './index'
 
 export class Byot implements TransportStrategy {
   private readonly __createTransportFn: () => Transport
