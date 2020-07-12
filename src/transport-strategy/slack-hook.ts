@@ -1,5 +1,4 @@
-import { SlackHookOptions } from 'winston-slack-webhook-transport'
-import WinstonSlackHook from 'winston-slack-webhook-transport'
+import WinstonSlackHook, { SlackHookOptions } from 'winston-slack-webhook-transport'
 import * as Transport from 'winston-transport'
 import { TransportStrategy } from './index'
 
