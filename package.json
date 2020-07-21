@@ -62,7 +62,7 @@
     "node": ">=6.0.0"
   },
   "files": [
-    "dist"
+    "lib"
   ],
   "husky": {
     "hooks": {
@@ -77,7 +77,7 @@
       "/node_modules/",
       "/test/",
       "/.idea/",
-      "/dist/",
+      "/lib/",
       "/tools/",
       "/docs/"
     ],
@@ -108,8 +108,8 @@
       "git add"
     ]
   },
-  "main": "dist/msh-node-logger.umd.js",
-  "module": "dist/msh-node-logger.es5.js",
+  "main": "msh-node-logger.umd.js",
+  "module": "msh-node-logger.es5.js",
   "name": "msh-node-logger",
   "prettier": {
     "bracketSpacing": true,
@@ -130,7 +130,7 @@
     "commit": "git-cz",
     "deploy-docs": "ts-node tools/gh-pages-publish",
     "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
-    "prebuild": "rimraf dist",
+    "prebuild": "rimraf lib && rimraf msh-node-logger.es5.* && rimraf msh-node-logger.umd.*",
     "precommit": "lint-staged",
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
     "semantic-release": "semantic-release",
@@ -141,6 +141,6 @@
     "test:watch": "jest --coverage --watch",
     "travis-deploy-once": "travis-deploy-once"
   },
-  "typings": "dist/types/msh-node-logger.d.ts",
+  "typings": "lib/msh-node-logger.d.ts",
   "version": "0.0.0"
 }
